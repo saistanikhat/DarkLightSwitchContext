@@ -1,10 +1,9 @@
 import React, { useContext, createContext, useState } from "react";
 import "./styles.css";
 
-// Main focus on dark/light mode switch with React context
 const initialTheme = {
   darkMode: false,
-  toggleDarkMode: () => {}
+  toggleDarkMode: () => {},
 };
 
 const ThemeContext = createContext(initialTheme);
@@ -42,7 +41,9 @@ const MainContainer = () => {
   };
 
   const decrementCounter = () => {
-    setCounter(counter - 1);
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
   };
 
   const theme = darkMode ? "dark" : "light";
